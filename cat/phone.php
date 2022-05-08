@@ -1,14 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
 	<link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <?php include "header.php"; ?>
+<?php include "../header.php"; ?>
 		<div class="home-prodlist">
 			<div>
 				<h3 style="text-align: center;">Products Category</h3>
@@ -16,7 +16,7 @@
 			<div style="padding: 20px 30px; width: 85%; margin: 0 auto;">
 				<ul style="float: left;">
 					<li style="float: left; padding: 25px;">
-						<div class="home-prodlist-img"><a href="cat/phone.php">
+						<div class="home-prodlist-img"><a href="../cat/phone.php">
 							<img src="../img/smartphone.png" class="home-prodlist-imgi">Smart Phone
 							</a>
 						</div>
@@ -24,7 +24,7 @@
 				</ul>
 				<ul style="float: left;">
 					<li style="float: left; padding: 25px;">
-						<div class="home-prodlist-img"><a href="cat/case.php">
+						<div class="home-prodlist-img"><a href="../cat/case.php">
 							<img src="../img/phone-case.png" class="home-prodlist-imgi">Cases
 							</a>
 						</div>
@@ -35,7 +35,7 @@
 		<div style="padding: 30px 120px; font-size: 25px; margin: 0 auto; display: table; width: 98%;">
 		<div>
 		<?php 
-			include "database.php";
+			include "../database.php";
 			$getposts = "SELECT * FROM products WHERE product_cat = '1' ORDER BY product_id DESC LIMIT 10";
 			$data = mysqli_query($connection,$getposts);
 
@@ -51,7 +51,7 @@
 						echo '
 							<ul style="float: left;">
 								<li style="float: left; padding: 0px 25px 25px 25px;">
-									<div class="home-prodlist-img"><a href="/cat/view_products.php?pid='.$id.'">
+									<div class="home-prodlist-img"><a href="view_products.php?pid='.$id.'">
 										<img style="text-align: center;display: block;" src="../img/phone/'.$picture.'" class="home-prodlist-imgi">
 										</a>
 										<div style="text-align: center; padding: 0 0 6px 0;"> <span style="font-size: 15px;">'.$pTitle.'</span><br> Price: '.$price.' $</div>
@@ -60,7 +60,6 @@
 								</li>
 							</ul>
 						';
-						
 
 						}
 				}
@@ -68,5 +67,3 @@
 			
 		</div>
 	</div>
-</body>
-</html>

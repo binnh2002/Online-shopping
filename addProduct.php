@@ -19,7 +19,7 @@
         echo $name;
         echo $price;
         echo $desc;
-        $connection = mysqli_connect("localhost", "root","", "ex1");
+        $connection = mysqli_connect("localhost", "root","", "shop");
         if($connection == false){
            die("Error: Could not connect to database"); 
         } else {
